@@ -6,6 +6,7 @@ using IPA.Loader;
 using IPA.Logging;
 using Scribble.Stores;
 using SiraUtil;
+using Zenject;
 
 namespace Scribble.Installers
 {
@@ -25,7 +26,6 @@ namespace Scribble.Installers
 
         public override void InstallBindings()
         {
-            Container.BindLoggerAsSiraLogger(_logger);
             Container.BindInstance(_config);
             Container.Bind<PluginDirectories>().AsSingle();
 

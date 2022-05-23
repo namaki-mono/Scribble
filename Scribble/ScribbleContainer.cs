@@ -7,7 +7,7 @@ using HarmonyLib;
 using Scribble.Helpers;
 using Scribble.Installers;
 using Scribble.Stores;
-using SiraUtil.Tools;
+using SiraUtil.Logging;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Zenject;
@@ -467,8 +467,9 @@ namespace Scribble
 
         public void OnGameStarted()
         {
-            BeatmapObjectSpawnController spawnController = FindObjectOfType<BeatmapObjectSpawnController>();
-            UpdateMaterials(spawnController.currentBpm / 60);
+            // TODO: Currently unused, but may be worth re-implementing later on
+            // BeatmapObjectSpawnController spawnController = FindObjectOfType<BeatmapObjectSpawnController>();
+            // UpdateMaterials(spawnController.currentBpm / 60);
         }
 
         public void Dispose()

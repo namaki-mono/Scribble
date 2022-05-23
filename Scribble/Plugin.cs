@@ -11,12 +11,13 @@ namespace Scribble
     [Plugin(RuntimeOptions.DynamicInit)]
     internal class Plugin
     {
-
+        
         [Init]
         public Plugin(Logger logger, Config config, Zenjector zenjector, PluginMetadata metadata)
         {
-            zenjector.OnApp<PluginAppInstaller>().WithParameters(logger, config.Generated<PluginConfig>(), metadata);
-            zenjector.OnMenu<PluginMenuInstaller>();
+            zenjector.UseLogger(logger);
+            zenjector.Install<PluginAppInstaller>(Location.App, logger, config.Generated<PluginConfig>(), metadata);
+            zenjector.Install<PluginMenuInstaller>(Location.Menu);
         }
 
         [OnEnable]

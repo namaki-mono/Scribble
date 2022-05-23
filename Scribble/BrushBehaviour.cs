@@ -6,7 +6,7 @@ using IPA.Utilities;
 using Scribble.Installers;
 using Scribble.Stores;
 using Scribble.Tools;
-using SiraUtil.Tools;
+using SiraUtil.Logging;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using VRUIControls;
